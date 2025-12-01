@@ -1,11 +1,10 @@
-"Ваш код повинен зробити DELETE-запит до вказаного URL, де {userId} – це ID користувача, якого потрібно видалити."
-"Поверніть статус відповіді сервера після видалення."
-
-"https://jsonplaceholder.typicode.com/users - адреса куди робити запит"
-
-
+// Задача 4: Видалити користувача
 function deleteUser(id) {
-  // Ваш код
+  // Повертаємо проміс від fetch без обробки .then(), 
+  // щоб тест міг сам отримати об'єкт response і перевірити response.status
+  return fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
+    method: 'DELETE'
+  });
 }
 
 console.log(deleteUser(1));
